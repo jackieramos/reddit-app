@@ -8,7 +8,7 @@ Based on it, I coded it in a way that all of the team members can easily underst
 
 ## Authorization
 I used Application Only OAuth for authorization. It’s a user-less way of authorization provided by Reddit so I make API requests without a user context.
-Source: [Source](https://github.com/reddit-archive/reddit/wiki/oauth2)
+Source: (https://github.com/reddit-archive/reddit/wiki/oauth2)
 
 ## Libraries/API 
 * Alamofire 5
