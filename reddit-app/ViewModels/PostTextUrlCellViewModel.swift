@@ -14,6 +14,14 @@ class PostTextUrlCellViewModel: PostCellViewModelConvertible {
         return self.post.url
     }
     
+    var mediaDomainURL: String? {
+        return self.post.mediaDomainURL
+    }
+    
+    var mediaURL: String? {
+        return self.post.mediaURL
+    }
+    
     var selftext: String {
         return self.post.selftext
     }

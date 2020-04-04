@@ -64,9 +64,6 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
         case let vm as PostImageCellViewModel:
             cell = tableView.dequeueReusableCell(withIdentifier: "PostImageTableViewCell", for: indexPath) as! PostImageTableViewCell
             (cell as! PostImageTableViewCell).bind(vm)
-        case let vm as PostVideoCellViewModel:
-            cell = tableView.dequeueReusableCell(withIdentifier: "PostVideoTableViewCell", for: indexPath) as! PostVideoTableViewCell
-            (cell as! PostVideoTableViewCell).bind(vm)
         default:
             break
         }

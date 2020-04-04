@@ -15,12 +15,12 @@ class APIManager {
 
         let request = AF.request(route)
                         .responseDecodable (decoder: decoder){ (response: DataResponse<T, AFError>) in
-                            debugPrint(response)
+//                            debugPrint(response)
                             completion(response)
         }
         
         request.cURLDescription(calling: { desc in
-            print(desc)
+//            print(desc)
         })
         return request
     }
@@ -48,8 +48,8 @@ class APIManager {
         request(route: AuthorizationRouter.authorize, completion: completion)
     }
 
-    static func getSubreddits(completion:@escaping (Result<SubredditListing, AFError>)->Void) {
-        request(route: RedditRouter.getSubredditsListing, completion: completion)
+    static func getSubreddits(after: String, limit: Int, completion:@escaping (Result<SubredditListing, AFError>)->Void) {
+        request(route: RedditRouter.getSubredditsListing(after: after, limit: limit), completion: completion)
     }
 
     static func getPosts(subredditPath: String, completion:@escaping (Result<PostsListing, AFError>)->Void) {

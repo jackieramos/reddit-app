@@ -10,7 +10,7 @@ import Alamofire
 
 enum RedditRouter: URLRequestConvertible, APIConfigurationProtocol {
 
-    case getSubredditsListing
+    case getSubredditsListing(after: String, limit: Int)
     case getPostsListing(subredditPath: String)
     case searchSubreddit(query: String)
 
@@ -41,8 +41,8 @@ enum RedditRouter: URLRequestConvertible, APIConfigurationProtocol {
     // MARK: - Parameters
     var parameters: Parameters? {
         switch self {
-        case .getSubredditsListing:
-            return nil
+        case .getSubredditsListing(let after, let limit):
+            return [K.APIParameterKey.after: after, K.APIParameterKey.limit: limit]
         case .getPostsListing(_):
             return nil
         case .searchSubreddit(let query):

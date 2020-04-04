@@ -21,6 +21,9 @@ struct K {
         static let grantType = "grant_type"
         static let deviceId = "device_id"
         static let query = "q"
+        static let after = "after"
+        static let limit = "limit"
+        
     }
 }
 

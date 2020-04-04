@@ -12,12 +12,10 @@ class PostsListViewModel {
     init(posts: [Post]) {
         self.postsVM = posts.map{ post in
             switch post.type {
-            case .text, .link:
+            case .text, .link, .hostedVideo, .richVideo:
                 return PostTextUrlCellViewModel(post: post)
             case .image:
                 return PostImageCellViewModel(post: post)
-            case .hostedVideo, .richVideo:
-                return PostVideoCellViewModel(post: post)
             }
         }
     }

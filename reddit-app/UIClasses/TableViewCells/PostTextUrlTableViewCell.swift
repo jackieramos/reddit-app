@@ -31,6 +31,14 @@ class PostTextUrlTableViewCell: UITableViewCell {
             content = vm.selftext
         } else if vm.type == .link {
             content = vm.url
+        } else if vm.type == .hostedVideo {
+            if let validUrl = vm.mediaURL {
+                content = validUrl
+            }
+        } else if vm.type == .richVideo {
+            if let validUrl = vm.mediaDomainURL {
+                content = validUrl
+            }
         }
         
         self.titleLabel.text = vm.title
