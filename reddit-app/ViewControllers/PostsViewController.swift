@@ -74,7 +74,9 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
             (cell as! PostTextUrlTableViewCell).bind(vm)
         case let vm as PostImageCellViewModel:
             cell = tableView.dequeueReusableCell(withIdentifier: "PostImageTableViewCell", for: indexPath) as! PostImageTableViewCell
-            (cell as! PostImageTableViewCell).bind(vm)
+
+            (cell as! PostImageTableViewCell).delegate = self
+            (cell as! PostImageTableViewCell).bind(vm, indexPath: indexPath)
         default:
             break
         }
@@ -100,5 +102,13 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
                 self.getPosts(self.subredditPath, after: after)
             }
         }
+    }
+}
+
+extension PostsViewController: ScaledHeightImageDelegate {
+    func reloadCell(_ indexPath: IndexPath) {
+        self.tableView.beginUpdates()
+        self.tableView.reloadRows( at: [indexPath], with: .fade)
+        self.tableView.endUpdates()
     }
 }

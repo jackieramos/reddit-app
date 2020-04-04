@@ -12,7 +12,7 @@ let imageCache = NSCache<AnyObject, AnyObject>()
 
 extension UIImageView {
 
-    func loadImagesUsingCacheWithUrlString(urlString: String) {
+    func loadImagesUsingCacheWithUrlString(urlString: String, completion: (()->Void)? = nil) {
 
         self.image = nil
         self.contentMode = .scaleAspectFill
@@ -41,6 +41,8 @@ extension UIImageView {
                     imageCache.setObject(downloadedImage, forKey: urlString as AnyObject)
                     
                     self.image = downloadedImage
+                    
+                    completion?()
                 }
             }
         }).resume()

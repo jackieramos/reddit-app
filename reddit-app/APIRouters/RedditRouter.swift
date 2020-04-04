@@ -30,7 +30,7 @@ enum RedditRouter: URLRequestConvertible, APIConfigurationProtocol {
     var path: String {
         switch self {
         case .getSubredditsListing:
-            return "/subreddits/default"
+            return "/subreddits"
         case .getPostsListing(let subredditPath, _):
             return "\(subredditPath)"
         case .searchSubreddit:

@@ -17,9 +17,15 @@ class SubredditCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var membersCountLabel: UILabel!
 
     func bind(_ subredditVM: SubredditCellViewModel) {
-        
-        self.bannerImageView.loadImagesUsingCacheWithUrlString(urlString: subredditVM.bannerImageURL)
-        self.iconView.loadImagesUsingCacheWithUrlString(urlString: subredditVM.iconImageURL)
+
+        if let bannerImg = subredditVM.bannerImageURL {
+            self.bannerImageView.loadImagesUsingCacheWithUrlString(urlString: bannerImg)
+        }
+
+        if let iconImg = subredditVM.iconImageURL {
+            self.iconView.loadImagesUsingCacheWithUrlString(urlString: iconImg)
+        }
+
         self.titleLabel.text = subredditVM.title
         self.descriptionLabel.text = subredditVM.description
         self.membersCountLabel.text = subredditVM.membersCount

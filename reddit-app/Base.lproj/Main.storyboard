@@ -46,6 +46,7 @@
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d9R-Vp-Uya">
                                                     <rect key="frame" x="80" y="50" width="60" height="60"/>
+                                                    <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="DTZ-JX-vaJ"/>
                                                         <constraint firstAttribute="width" secondItem="d9R-Vp-Uya" secondAttribute="height" multiplier="60:60" id="STT-sr-uPG"/>
@@ -465,6 +466,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4Nd-8Y-f6u"/>
+        <segue reference="trz-0m-v5S"/>
     </inferredMetricsTieBreakers>
 </document>
