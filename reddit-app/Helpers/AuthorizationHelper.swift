@@ -9,6 +9,12 @@
 import Foundation
 
 class AuthorizationHelper {
+    
+    /// Get Basic Auth header string thru username and password
+    ///
+    /// - Parameters:
+    ///   - username: Basic Auth username
+    ///   - password: Basic Auth password
     static func generateBasicAuthAuthorizationHeader(username: String, password: String) -> String {
         let loginString = String(format: "%@:%@", username, password)
         let loginData = loginString.data(using: String.Encoding.utf8)!

@@ -19,12 +19,4 @@ struct AuthData: Decodable {
         case tokenType = "token_type"
         case deviceId = "device_id"
     }
-    
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//
-//        accessToken = try container.decode(String.self, forKey: .accessToken)
-//        tokenType = try container.decode(String.self, forKey: .tokenType)
-//        deviceId = try container.decode(String.self, forKey: .deviceId)
-//    }
 }

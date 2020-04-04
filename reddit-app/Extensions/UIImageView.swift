@@ -12,6 +12,10 @@ let imageCache = NSCache<AnyObject, AnyObject>()
 
 extension UIImageView {
 
+    ///Load image with caching
+    ///
+    /// - Parameters:
+    ///   - urlString: Image URL string
     func loadImagesUsingCacheWithUrlString(urlString: String, completion: (()->Void)? = nil) {
 
         self.image = nil

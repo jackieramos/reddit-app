@@ -10,7 +10,8 @@ import UIKit
 
 class ScaledHeightImageView: UIImageView {
 
-   override var intrinsicContentSize: CGSize {
+    /// Resize imageView according to its image size/resolution
+    override var intrinsicContentSize: CGSize {
 
         if let img = self.image {
             let imgWidth = img.size.width

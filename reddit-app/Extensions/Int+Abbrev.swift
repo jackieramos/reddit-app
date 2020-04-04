@@ -9,6 +9,8 @@
 import Foundation
 
 extension Int {
+    
+    /// Getting count abbreviation for showing of members count
     func abbrv() -> String {
         let numFormatter = NumberFormatter()
 

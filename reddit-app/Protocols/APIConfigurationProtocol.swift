@@ -53,6 +53,10 @@ extension APIConfigurationProtocol {
         return urlRequest
     }
     
+    /// Parse parameters for POST data x-www-form-urlencoded
+    ///
+    /// - Parameters:
+    ///   - parameters: Request parameters
     private func parseParameters(parameters: Parameters) -> Data? {
 
         let body = parameters.map{ "\($0.key)=\($0.value)" }.joined(separator: "&")

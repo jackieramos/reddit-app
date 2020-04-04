@@ -93,6 +93,7 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
         self.performSegue(withIdentifier: "toPostDetailViewCotroller", sender: self)
     }
     
+    ///Infinite pagination using after
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scrollViewHeight = scrollView.frame.size.height
         let scrollContentSizeHeight = scrollView.contentSize.height;
@@ -106,6 +107,11 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension PostsViewController: ScaledHeightImageDelegate {
+    
+    ///Reload cell after loading image for image-type post to layout properly
+    ///
+    /// - Parameters:
+    ///   - indexPath: Cell indexPath to be reloaded
     func reloadCell(_ indexPath: IndexPath) {
         self.tableView.beginUpdates()
         self.tableView.reloadRows( at: [indexPath], with: .fade)

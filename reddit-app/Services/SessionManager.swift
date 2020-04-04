@@ -13,7 +13,7 @@ class SessionManager: NSObject {
     static let shared = SessionManager()
     
     var authCredentials: [String: String]?
-    
+
     func authorize(completion: ((String?)->Void)? = nil) {
         APIManager.authorize(completion: { response in
             switch response {
