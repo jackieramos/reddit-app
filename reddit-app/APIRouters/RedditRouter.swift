@@ -11,7 +11,7 @@ import Alamofire
 enum RedditRouter: URLRequestConvertible, APIConfigurationProtocol {
 
     case getSubredditsListing(after: String, limit: Int)
-    case getPostsListing(subredditPath: String)
+    case getPostsListing(subredditPath: String, after: String)
     case searchSubreddit(query: String)
 
     // MARK: - HTTPMethod
@@ -31,7 +31,7 @@ enum RedditRouter: URLRequestConvertible, APIConfigurationProtocol {
         switch self {
         case .getSubredditsListing:
             return "/subreddits/default"
-        case .getPostsListing(let subredditPath):
+        case .getPostsListing(let subredditPath, _):
             return "\(subredditPath)"
         case .searchSubreddit:
             return "/subreddits/search"
@@ -43,8 +43,8 @@ enum RedditRouter: URLRequestConvertible, APIConfigurationProtocol {
         switch self {
         case .getSubredditsListing(let after, let limit):
             return [K.APIParameterKey.after: after, K.APIParameterKey.limit: limit]
-        case .getPostsListing(_):
-            return nil
+        case .getPostsListing(_, let after):
+            return [K.APIParameterKey.after: after, K.APIParameterKey.limit: 20]
         case .searchSubreddit(let query):
             return [K.APIParameterKey.query: query]
         }

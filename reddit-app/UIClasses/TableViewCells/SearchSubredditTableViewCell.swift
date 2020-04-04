@@ -15,7 +15,7 @@ class SearchSubredditTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.selectionStyle = .none
     }
     
     func bind(_ vm: SubredditCellViewModel) {

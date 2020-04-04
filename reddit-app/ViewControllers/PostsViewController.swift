@@ -16,19 +16,30 @@ class PostsViewController: BaseViewController {
     var subredditPath: String!
     
     var postUrlString: String = ""
+    
+    var posts: [Post] = []
+    var after: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.getPosts(self.subredditPath)
+        self.title = self.subredditPath
+        
+        self.getPosts(self.subredditPath, after: "")
     }
     
-    func getPosts(_ subredditPath: String) {
-        APIManager.getPosts(subredditPath: subredditPath, completion: { response in
+    func getPosts(_ subredditPath: String, after: String) {
+        APIManager.getPosts(subredditPath: subredditPath, after: after, completion: { response in
             switch response {
             case .success(let postsList):
-                self.postsListVM = PostsListViewModel(posts: postsList.list)
-                self.tableView.reloadData()
+
+                if self.after != postsList.after {
+                    self.after = postsList.after
+
+                    self.posts.append(contentsOf: postsList.list)
+                    self.postsListVM = PostsListViewModel(posts: self.posts)
+                    self.tableView.reloadData()
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -67,6 +78,10 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             break
         }
+        
+        if self.postsListVM.postsVM.count != 0 && self.after == nil {
+            tableView.tableFooterView = UIView()
+        }
 
         return cell
     }
@@ -74,5 +89,16 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.postUrlString = self.postsListVM.postsVM[indexPath.row].postPath
         self.performSegue(withIdentifier: "toPostDetailViewCotroller", sender: self)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scrollViewHeight = scrollView.frame.size.height
+        let scrollContentSizeHeight = scrollView.contentSize.height;
+        let scrollOffset = scrollView.contentOffset.y;
+        if (scrollOffset + scrollViewHeight > scrollContentSizeHeight - 200) {
+            if let after = self.after {
+                self.getPosts(self.subredditPath, after: after)
+            }
+        }
     }
 }

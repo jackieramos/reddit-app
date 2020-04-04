@@ -283,7 +283,7 @@
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Lo-33-rXB">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -319,6 +319,20 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OlX-Kp-ign">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="V2E-Ah-hEC">
+                                    <rect key="frame" x="0.0" y="392" width="414" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="dRE-uE-k5V">
+                                            <rect key="frame" x="197" y="15" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="dRE-uE-k5V" firstAttribute="centerX" secondItem="V2E-Ah-hEC" secondAttribute="centerX" id="OKM-6j-Kqv"/>
+                                        <constraint firstItem="dRE-uE-k5V" firstAttribute="centerY" secondItem="V2E-Ah-hEC" secondAttribute="centerY" id="asD-Ka-74T"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostTextUrlTableViewCell" rowHeight="75" id="U4g-Du-a9W" customClass="PostTextUrlTableViewCell" customModule="reddit_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="75"/>
@@ -387,42 +401,6 @@
                                             <outlet property="titleLabel" destination="0Du-84-BhY" id="RkZ-y7-kvZ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostVideoTableViewCell" rowHeight="271" id="Ud2-va-5Fu" customClass="PostVideoTableViewCell" customModule="reddit_app" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="364" width="414" height="271"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ud2-va-5Fu" id="G3n-QC-aaZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="271"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6Q-RY-4Ei">
-                                                    <rect key="frame" x="20" y="11" width="374" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vy3-lc-W49">
-                                                    <rect key="frame" x="20" y="38.5" width="374" height="217.5"/>
-                                                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="217.5" id="5eo-6R-qph"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="vy3-lc-W49" firstAttribute="leading" secondItem="A6Q-RY-4Ei" secondAttribute="leading" id="1Ba-EO-fJ3"/>
-                                                <constraint firstItem="A6Q-RY-4Ei" firstAttribute="leading" secondItem="G3n-QC-aaZ" secondAttribute="leadingMargin" id="GbL-jm-1eV"/>
-                                                <constraint firstItem="A6Q-RY-4Ei" firstAttribute="top" secondItem="G3n-QC-aaZ" secondAttribute="topMargin" id="Pbp-Eg-Qc9"/>
-                                                <constraint firstItem="vy3-lc-W49" firstAttribute="trailing" secondItem="A6Q-RY-4Ei" secondAttribute="trailing" id="Vkf-Jr-Csp"/>
-                                                <constraint firstItem="vy3-lc-W49" firstAttribute="top" secondItem="A6Q-RY-4Ei" secondAttribute="bottom" constant="7" id="a5x-Tz-ECR"/>
-                                                <constraint firstItem="A6Q-RY-4Ei" firstAttribute="trailing" secondItem="G3n-QC-aaZ" secondAttribute="trailingMargin" id="nyj-Lh-Yen"/>
-                                                <constraint firstAttribute="bottom" secondItem="vy3-lc-W49" secondAttribute="bottom" constant="15" id="qEb-YD-cCV"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="contentVideoView" destination="vy3-lc-W49" id="IQh-Jf-akp"/>
-                                            <outlet property="titleLabel" destination="A6Q-RY-4Ei" id="sye-zR-5Yc"/>
-                                        </connections>
-                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="rmI-Xh-Vw1" id="Hzj-p1-Dbc"/>
@@ -487,6 +465,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="trz-0m-v5S"/>
+        <segue reference="4Nd-8Y-f6u"/>
     </inferredMetricsTieBreakers>
 </document>

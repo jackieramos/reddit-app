@@ -25,12 +25,6 @@ class PostDetailViewController: BaseViewController {
         }
         
         let request = URLRequest(url: validUrl)
-
-//        self.webView.navigationDelegate = self
         self.webView.load(request)
     }
 }
-
-//extension PostDetailViewController: WKNavigationDelegate {
-//    
-//}

@@ -52,8 +52,8 @@ class APIManager {
         request(route: RedditRouter.getSubredditsListing(after: after, limit: limit), completion: completion)
     }
 
-    static func getPosts(subredditPath: String, completion:@escaping (Result<PostsListing, AFError>)->Void) {
-        request(route: RedditRouter.getPostsListing(subredditPath: subredditPath), completion: completion)
+    static func getPosts(subredditPath: String, after: String, completion:@escaping (Result<PostsListing, AFError>)->Void) {
+        request(route: RedditRouter.getPostsListing(subredditPath: subredditPath, after: after), completion: completion)
     }
 
     static func searchSubreddit(query: String, completion:@escaping (Result<SubredditListing, AFError>)->Void) {
