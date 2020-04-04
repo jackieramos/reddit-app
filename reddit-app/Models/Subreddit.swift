@@ -11,10 +11,10 @@ import Foundation
 struct Subreddit: Decodable {
     var title: String
     let displayNamePrefixed: String
-    let iconImageURL: String
+    let iconImageURL: String?
     let bannerImageURL: String?
     let publicDescription: String
-    let subscribersCount: Int
+    let subscribersCount: Int?
     let path: String
     
     enum CodingKeys: String, CodingKey {
@@ -34,10 +34,10 @@ struct Subreddit: Decodable {
 
         title = try data.decode(String.self, forKey: .title)
         displayNamePrefixed = try data.decode(String.self, forKey: .displayNamePrefixed)
-        iconImageURL = try data.decode(String.self, forKey: .iconImageURL)
+        iconImageURL = try data.decode(String?.self, forKey: .iconImageURL)
         bannerImageURL = try data.decode(String?.self, forKey: .bannerImageURL)
         publicDescription = try data.decode(String.self, forKey: .publicDescription)
-        subscribersCount = try data.decode(Int.self, forKey: .subscribersCount)
+        subscribersCount = try data.decode(Int?.self, forKey: .subscribersCount)
         path = try data.decode(String.self, forKey: .path)
     }
 }

@@ -14,4 +14,5 @@ protocol PostCellViewModelConvertible {
     var title: String { get }
     var author: String { get }
     var type: PostType { get }
+    var postPath: String { get }
 }

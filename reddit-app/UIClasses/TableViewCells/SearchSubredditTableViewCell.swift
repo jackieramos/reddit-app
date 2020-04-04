@@ -9,16 +9,22 @@
 import UIKit
 
 class SearchSubredditTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var memberCountLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func bind(_ vm: SubredditCellViewModel) {
+       
+        if let validUrl = vm.iconImageURL {
+            self.iconImageView.loadImagesUsingCacheWithUrlString(urlString: validUrl)
+        }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        self.titleLabel.text = vm.title
+        self.memberCountLabel.text = vm.membersCount
     }
-
 }

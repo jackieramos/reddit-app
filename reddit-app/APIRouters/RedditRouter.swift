@@ -12,6 +12,7 @@ enum RedditRouter: URLRequestConvertible, APIConfigurationProtocol {
 
     case getSubredditsListing
     case getPostsListing(subredditPath: String)
+    case searchSubreddit(query: String)
 
     // MARK: - HTTPMethod
     var method: HTTPMethod {
@@ -19,6 +20,8 @@ enum RedditRouter: URLRequestConvertible, APIConfigurationProtocol {
         case .getSubredditsListing:
             return .get
         case .getPostsListing:
+            return .get
+        case .searchSubreddit:
             return .get
         }
     }
@@ -30,6 +33,8 @@ enum RedditRouter: URLRequestConvertible, APIConfigurationProtocol {
             return "/subreddits/default"
         case .getPostsListing(let subredditPath):
             return "\(subredditPath)"
+        case .searchSubreddit:
+            return "/subreddits/search"
         }
     }
 
@@ -40,6 +45,8 @@ enum RedditRouter: URLRequestConvertible, APIConfigurationProtocol {
             return nil
         case .getPostsListing(_):
             return nil
+        case .searchSubreddit(let query):
+            return [K.APIParameterKey.query: query]
         }
     }
 }

@@ -15,7 +15,7 @@ class SubredditCellViewModel {
     var iconImageURL: String!
     var title: String!
     var description: String!
-    var membersCount: String!
+    var membersCount: String = ""
 
     init(subreddit: Subreddit) {
         self.subreddit = subreddit
@@ -23,6 +23,9 @@ class SubredditCellViewModel {
         self.iconImageURL = subreddit.iconImageURL
         self.title = subreddit.title
         self.description = subreddit.publicDescription
-        self.membersCount = "\(subreddit.subscribersCount.abbrv()) members"
+
+        if let subscribers = subreddit.subscribersCount {
+            self.membersCount = "\(subscribers.abbrv()) members"
+        }
     }
 }

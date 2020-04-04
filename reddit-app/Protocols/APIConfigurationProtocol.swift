@@ -42,13 +42,12 @@ extension APIConfigurationProtocol {
 
        // Parameters
         if let parameters = parameters {
-            
-            urlRequest.httpBody = self.parseParameters(parameters: parameters)
-//            do {
-//                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
-//            } catch {
-//                throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
-//            }
+
+            if self.method == .post {
+                urlRequest.httpBody = self.parseParameters(parameters: parameters)
+            } else if self.method == .get {
+                return try URLEncoding.default.encode(urlRequest, with: self.parameters)
+            }
         }
        
         return urlRequest

@@ -11,7 +11,8 @@ import Foundation
 struct K {
     struct RedditServer {
         static let baseURL = "https://oauth.reddit.com"
-        static let authorizationURL = "https://www.reddit.com/api/v1"
+        static let host = "https://www.reddit.com"
+        static let apiPath = "/api/v1"
         static let grantTypeValue = "https://oauth.reddit.com/grants/installed_client"
         static let clientId = "mHDswJAmAxSQEg"
     }
@@ -19,6 +20,7 @@ struct K {
     struct APIParameterKey {
         static let grantType = "grant_type"
         static let deviceId = "device_id"
+        static let query = "q"
     }
 }
 

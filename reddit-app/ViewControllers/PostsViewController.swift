@@ -14,6 +14,8 @@ class PostsViewController: BaseViewController {
     
     var postsListVM = PostsListViewModel(posts: [])
     var subredditPath: String!
+    
+    var postUrlString: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,13 @@ class PostsViewController: BaseViewController {
                 print(error.localizedDescription)
             }
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPostDetailViewCotroller" {
+            let postDetailVC = segue.destination as! PostDetailViewController
+            postDetailVC.postUrlString = self.postUrlString
+        }
     }
 }
 
@@ -63,5 +72,10 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
         }
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.postUrlString = self.postsListVM.postsVM[indexPath.row].postPath
+        self.performSegue(withIdentifier: "toPostDetailViewCotroller", sender: self)
     }
 }

@@ -15,7 +15,7 @@ class APIManager {
 
         let request = AF.request(route)
                         .responseDecodable (decoder: decoder){ (response: DataResponse<T, AFError>) in
-//                            debugPrint(response)
+                            debugPrint(response)
                             completion(response)
         }
         
@@ -54,5 +54,9 @@ class APIManager {
 
     static func getPosts(subredditPath: String, completion:@escaping (Result<PostsListing, AFError>)->Void) {
         request(route: RedditRouter.getPostsListing(subredditPath: subredditPath), completion: completion)
+    }
+
+    static func searchSubreddit(query: String, completion:@escaping (Result<SubredditListing, AFError>)->Void) {
+        request(route: RedditRouter.searchSubreddit(query: query), completion: completion)
     }
 }

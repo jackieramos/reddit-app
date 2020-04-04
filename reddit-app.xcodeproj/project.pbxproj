@@ -46,6 +46,7 @@
 		C56AEA842438327A0096CCE1 /* PostsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56AEA832438327A0096CCE1 /* PostsListViewModel.swift */; };
 		C56AEA86243867D50096CCE1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56AEA85243867D50096CCE1 /* SearchViewController.swift */; };
 		C56AEA8824386A3D0096CCE1 /* SearchSubredditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56AEA8724386A3D0096CCE1 /* SearchSubredditTableViewCell.swift */; };
+		C5AD9E6724389CD000370F33 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AD9E6624389CD000370F33 /* PostDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		C56AEA832438327A0096CCE1 /* PostsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListViewModel.swift; sourceTree = "<group>"; };
 		C56AEA85243867D50096CCE1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C56AEA8724386A3D0096CCE1 /* SearchSubredditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSubredditTableViewCell.swift; sourceTree = "<group>"; };
+		C5AD9E6624389CD000370F33 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +304,7 @@
 				C56AEA632437A82C0096CCE1 /* BaseViewController.swift */,
 				C56AEA6F243827570096CCE1 /* PostsViewController.swift */,
 				C56AEA85243867D50096CCE1 /* SearchViewController.swift */,
+				C5AD9E6624389CD000370F33 /* PostDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				C56AEA432435B48D0096CCE1 /* AuthorizationHelper.swift in Sources */,
 				C56AEA492435D46C0096CCE1 /* AuthData.swift in Sources */,
 				C56AEA842438327A0096CCE1 /* PostsListViewModel.swift in Sources */,
+				C5AD9E6724389CD000370F33 /* PostDetailViewController.swift in Sources */,
 				C56AEA682437B75E0096CCE1 /* GlobalUtil.swift in Sources */,
 				C56AEA402434C3460096CCE1 /* APIConfigurationProtocol.swift in Sources */,
 				C56AEA7E24382EB00096CCE1 /* PostTextUrlCellViewModel.swift in Sources */,

@@ -24,6 +24,12 @@ class SubredditsListViewController: BaseViewController {
         self.getSubreddits()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        
+        self.searchBar.resignFirstResponder()
+    }
+    
     func getSubreddits() {
         APIManager.getSubreddits(completion: { response in
             switch response {
@@ -74,11 +80,14 @@ extension SubredditsListViewController: UICollectionViewDelegate, UICollectionVi
 
 extension SubredditsListViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
         
-        self.modalPresentationStyle = .fullScreen
-        self.modalTransitionStyle = .crossDissolve
+        searchBar.resignFirstResponder()
         
-        self.present(vc, animated: true, completion: nil)
+        let nav = self.storyboard?.instantiateViewController(withIdentifier: "SearchNavigationViewController") as! UINavigationController
+        
+        nav.modalPresentationStyle = .fullScreen
+        nav.modalTransitionStyle = .crossDissolve
+        
+        self.present(nav, animated: false, completion: nil)
     }
 }

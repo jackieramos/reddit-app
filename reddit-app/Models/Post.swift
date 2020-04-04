@@ -19,6 +19,7 @@ struct Post: Decodable {
     let title: String //
     let author: String //author_fullname
     var typeString: String? //post_hint
+    var postPath: String
     
     ///for link  & image type
     var url: String
@@ -59,6 +60,7 @@ struct Post: Decodable {
         case media
         case mediaURL = "scrubber_media_url"
         case selftext
+        case postPath = "permalink"
     }
 
     init(from decoder: Decoder) throws {
@@ -88,5 +90,6 @@ struct Post: Decodable {
         }
 
         selftext = try data.decode(String.self, forKey: .selftext)
+        postPath = try data.decode(String.self, forKey: .postPath)
     }
 }

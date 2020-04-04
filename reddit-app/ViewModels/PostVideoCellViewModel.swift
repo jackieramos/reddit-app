@@ -24,6 +24,10 @@ class PostVideoCellViewModel: PostCellViewModelConvertible {
 }
 
 extension PostVideoCellViewModel {
+    var postPath: String {
+        return "\(K.RedditServer.host)\(self.post.postPath)"
+    }
+
     var created: Float {
         return self.post.created
     }

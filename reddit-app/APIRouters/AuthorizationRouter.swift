@@ -14,7 +14,7 @@ enum AuthorizationRouter: URLRequestConvertible, APIConfigurationProtocol {
     case authorize
 
     var url: URL {
-        return try! K.RedditServer.authorizationURL.asURL()
+        return try! "\(K.RedditServer.host)\(K.RedditServer.apiPath)".asURL()
     }
     
     var authorizationHeader: String {
