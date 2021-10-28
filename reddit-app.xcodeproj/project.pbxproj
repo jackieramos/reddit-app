@@ -3,17 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210CF60224396CC700F94702 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210CF5FF24396CC700F94702 /* WebKit.framework */; };
+		4DC3C3D6272A48A800A863C9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4DC3C3D5272A48A800A863C9 /* Alamofire */; };
 		C56AEA00243347E20096CCE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56AE9FF243347E20096CCE1 /* AppDelegate.swift */; };
 		C56AEA07243347E20096CCE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C56AEA05243347E20096CCE1 /* Main.storyboard */; };
 		C56AEA09243347E60096CCE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C56AEA08243347E60096CCE1 /* Assets.xcassets */; };
 		C56AEA0C243347E60096CCE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C56AEA0A243347E60096CCE1 /* LaunchScreen.storyboard */; };
 		C56AEA1A243359250096CCE1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56AEA19243359250096CCE1 /* Constants.swift */; };
-		C56AEA3424335C410096CCE1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56AEA2624335B220096CCE1 /* Alamofire.framework */; };
-		C56AEA3524335C410096CCE1 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C56AEA2624335B220096CCE1 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C56AEA39243494090096CCE1 /* AuthorizationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56AEA38243494090096CCE1 /* AuthorizationRouter.swift */; };
 		C56AEA3D2434941A0096CCE1 /* RedditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56AEA3C2434941A0096CCE1 /* RedditRouter.swift */; };
 		C56AEA402434C3460096CCE1 /* APIConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56AEA3F2434C3460096CCE1 /* APIConfigurationProtocol.swift */; };
@@ -47,23 +47,6 @@
 		C5AD9E6724389CD000370F33 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AD9E6624389CD000370F33 /* PostDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		C56AEA2524335B220096CCE1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C56AEA1B24335B220096CCE1 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
-			remoteInfo = "Alamofire iOS";
-		};
-		C56AEA2724335B220096CCE1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C56AEA1B24335B220096CCE1 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
-			remoteInfo = "Alamofire iOS Tests";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		C56AEA3624335C410096CCE1 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -71,7 +54,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C56AEA3524335C410096CCE1 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +61,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		210CF5FF24396CC700F94702 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		C56AE9FC243347E20096CCE1 /* reddit-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "reddit-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C56AE9FF243347E20096CCE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C56AEA06243347E20096CCE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,7 +69,6 @@
 		C56AEA0B243347E60096CCE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C56AEA0D243347E60096CCE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C56AEA19243359250096CCE1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		C56AEA1B24335B220096CCE1 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		C56AEA38243494090096CCE1 /* AuthorizationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRouter.swift; sourceTree = "<group>"; };
 		C56AEA3C2434941A0096CCE1 /* RedditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditRouter.swift; sourceTree = "<group>"; };
 		C56AEA3F2434C3460096CCE1 /* APIConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigurationProtocol.swift; sourceTree = "<group>"; };
@@ -125,7 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C56AEA3424335C410096CCE1 /* Alamofire.framework in Frameworks */,
+				210CF60224396CC700F94702 /* WebKit.framework in Frameworks */,
+				4DC3C3D6272A48A800A863C9 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +118,6 @@
 		C56AE9F3243347E20096CCE1 = {
 			isa = PBXGroup;
 			children = (
-				C56AEA1B24335B220096CCE1 /* Alamofire.xcodeproj */,
 				C56AE9FE243347E20096CCE1 /* reddit-app */,
 				C56AE9FD243347E20096CCE1 /* Products */,
 				C56AEA3324335C410096CCE1 /* Frameworks */,
@@ -198,18 +180,10 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		C56AEA1C24335B220096CCE1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C56AEA2624335B220096CCE1 /* Alamofire.framework */,
-				C56AEA2824335B220096CCE1 /* Alamofire iOS Tests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		C56AEA3324335C410096CCE1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				210CF5FF24396CC700F94702 /* WebKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -339,6 +313,9 @@
 			dependencies = (
 			);
 			name = "reddit-app";
+			packageProductDependencies = (
+				4DC3C3D5272A48A800A863C9 /* Alamofire */,
+			);
 			productName = "reddit-app";
 			productReference = C56AE9FC243347E20096CCE1 /* reddit-app.app */;
 			productType = "com.apple.product-type.application";
@@ -367,37 +344,17 @@
 				Base,
 			);
 			mainGroup = C56AE9F3243347E20096CCE1;
+			packageReferences = (
+				4DC3C3D4272A48A800A863C9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = C56AE9FD243347E20096CCE1 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C56AEA1C24335B220096CCE1 /* Products */;
-					ProjectRef = C56AEA1B24335B220096CCE1 /* Alamofire.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				C56AE9FB243347E20096CCE1 /* reddit-app */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		C56AEA2624335B220096CCE1 /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = C56AEA2524335B220096CCE1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C56AEA2824335B220096CCE1 /* Alamofire iOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire iOS Tests.xctest";
-			remoteRef = C56AEA2724335B220096CCE1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C56AE9FA243347E20096CCE1 /* Resources */ = {
@@ -651,6 +608,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4DC3C3D4272A48A800A863C9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4DC3C3D5272A48A800A863C9 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4DC3C3D4272A48A800A863C9 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C56AE9F4243347E20096CCE1 /* Project object */;
 }

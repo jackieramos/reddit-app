@@ -6,6 +6,7 @@
 //  Copyright © 2020 Jackie. All rights reserved.
 //
 
+import Foundation
 import Alamofire
 
 typealias APIParams = [String : Any]?

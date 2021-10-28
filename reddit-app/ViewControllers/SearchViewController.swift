@@ -34,6 +34,7 @@ class SearchViewController: BaseViewController {
     }
     
     @objc func searchSubreddit(_ searchBar: UISearchBar) {
+        print("QUERY")
         guard let query = searchBar.text, query.trimmingCharacters(in: .whitespaces) != "" else {
             return
         }
